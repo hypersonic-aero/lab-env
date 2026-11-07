@@ -9,7 +9,7 @@ or other personal infrastructure details.
 Clone the repository and install the package with development dependencies:
 
 ```bash
-git clone https://github.com/uahypersonics/lab-env.git
+git clone https://github.com/hypersonic-aero/lab-env.git
 cd lab-env
 python -m pip install -e ".[dev]"
 ```

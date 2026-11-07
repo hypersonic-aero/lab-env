@@ -44,10 +44,10 @@ dev = [
 lab = "lab_env.cli.app:app"
 
 [project.urls]
-Homepage = "https://github.com/uahypersonics/lab-env"
-Repository = "https://github.com/uahypersonics/lab-env"
-Documentation = "https://uahypersonics.github.io/lab-env"
-Issues = "https://github.com/uahypersonics/lab-env/issues"
+Homepage = "https://github.com/hypersonic-aero/lab-env"
+Repository = "https://github.com/hypersonic-aero/lab-env"
+Documentation = "https://hypersonic-aero.github.io/lab-env"
+Issues = "https://github.com/hypersonic-aero/lab-env/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

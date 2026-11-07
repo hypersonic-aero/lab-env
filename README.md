@@ -1,7 +1,7 @@
 # lab-env
 
-[![Test](https://github.com/uahypersonics/lab-env/actions/workflows/test.yml/badge.svg)](https://github.com/uahypersonics/lab-env/actions/workflows/test.yml)
-[![Docs](https://img.shields.io/badge/docs-zensical-blue)](https://uahypersonics.github.io/lab-env/)
+[![Test](https://github.com/hypersonic-aero/lab-env/actions/workflows/test.yml/badge.svg)](https://github.com/hypersonic-aero/lab-env/actions/workflows/test.yml)
+[![Docs](https://img.shields.io/badge/docs-zensical-blue)](https://hypersonic-aero.github.io/lab-env/)
 [![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-≥3.11-blue.svg)](https://www.python.org/downloads/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
@@ -70,7 +70,7 @@ exact paths and managed block first with `lab shell preview`.
 ## Documentation
 
 The user guide is available at
-[uahypersonics.github.io/lab-env](https://uahypersonics.github.io/lab-env).
+[hypersonic-aero.github.io/lab-env](https://hypersonic-aero.github.io/lab-env).
 Development and contribution instructions are in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License

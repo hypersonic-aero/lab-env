@@ -21,7 +21,7 @@ For an isolated application install, use `pipx install lab-env`.
 Clone the repository and install it in editable mode:
 
 ```bash
-git clone https://github.com/uahypersonics/lab-env.git
+git clone https://github.com/hypersonic-aero/lab-env.git
 cd lab-env
 pip install -e .
 ```

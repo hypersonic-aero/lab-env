@@ -6,8 +6,8 @@ type: software
 authors:
   - family-names: "Hader"
     given-names: "Christoph"
-repository-code: "https://github.com/uahypersonics/lab-env"
-url: "https://uahypersonics.github.io/lab-env"
+repository-code: "https://github.com/hypersonic-aero/lab-env"
+url: "https://hypersonic-aero.github.io/lab-env"
 license: GPL-3.0-or-later
 keywords:
   - research computing

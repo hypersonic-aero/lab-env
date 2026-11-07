@@ -1,10 +1,10 @@
 site_name: lab-env
-site_url: https://uahypersonics.github.io/lab-env
+site_url: https://hypersonic-aero.github.io/lab-env
 site_author: Christoph Hader
 site_description: Tools for consistent research computing environments.
 
-repo_name: uahypersonics/lab-env
-repo_url: https://github.com/uahypersonics/lab-env
+repo_name: hypersonic-aero/lab-env
+repo_url: https://github.com/hypersonic-aero/lab-env
 edit_uri: edit/main/docs/
 
 theme:

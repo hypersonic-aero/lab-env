@@ -32,12 +32,12 @@ For more detail, see [Installation](installation.md), [Getting Started](user-gui
 ## Help and Contributions
 
 Report problems or ask questions in the
-[GitHub issue tracker](https://github.com/uahypersonics/lab-env/issues). See the
-[Contributing Guide](https://github.com/uahypersonics/lab-env/blob/main/CONTRIBUTING.md)
+[GitHub issue tracker](https://github.com/hypersonic-aero/lab-env/issues). See the
+[Contributing Guide](https://github.com/hypersonic-aero/lab-env/blob/main/CONTRIBUTING.md)
 for development instructions.
 
 ## License
 
 GNU General Public License v3.0 or later. See
-[LICENSE](https://github.com/uahypersonics/lab-env/blob/main/LICENSE) for the
+[LICENSE](https://github.com/hypersonic-aero/lab-env/blob/main/LICENSE) for the
 complete license terms.

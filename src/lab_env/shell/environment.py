@@ -20,6 +20,11 @@ SYSTEM_CONDA_ROOTS = (
     Path("/opt/homebrew/Caskroom/miniforge/base"),
 )
 
+# user executable directories, in the order they end up at the front of PATH:
+# ~/.local/bin (pip --user, pipx, uv tool) before ~/bin (hand-made scripts), the
+# order of the default ~/.profile on Debian/Ubuntu
+USER_BIN_DIRS = ("$HOME/.local/bin", "$HOME/bin")
+
 
 def conda_init_candidates(home: Path | None = None) -> tuple[Path, ...]:
     """Return supported Conda initialization scripts in discovery order."""
@@ -83,16 +88,24 @@ def find_conda_init(
 def render_environment(config: ShellConfig) -> str:
     """Render enabled shell environment integrations."""
 
-    # prepend the standard user executable directory once
+    # prepend the standard user executable directories once each
     environment_lines = [
         "# --------------------------------------------------",
         "# environment: initializes optional command-line tools",
         "# --------------------------------------------------",
-        'case ":${PATH:-}:" in',
-        '    *":$HOME/bin:"*) ;;',
-        '    *) export PATH="$HOME/bin${PATH:+:$PATH}" ;;',
-        "esac",
     ]
+
+    # the directory prepended last ends up first, so go through them back to front;
+    # a directory already on PATH (e.g. from ~/.profile) is left where it is
+    for bin_dir in reversed(USER_BIN_DIRS):
+        environment_lines.extend(
+            [
+                'case ":${PATH:-}:" in',
+                f'    *":{bin_dir}:"*) ;;',
+                f'    *) export PATH="{bin_dir}${{PATH:+:$PATH}}" ;;',
+                "esac",
+            ]
+        )
 
     # stop after the standard PATH setup when Conda integration is disabled
     if not config.initialize_conda:

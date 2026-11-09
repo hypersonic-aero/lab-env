@@ -91,10 +91,13 @@ user input and do not copy untrusted commands into it.
 
 ## Standard User Executables
 
-The generated Bash or Zsh fragment prepends `$HOME/bin` to `PATH` once. This
-makes user-installed command-line tools under `~/bin` discoverable without
-requiring a separate dotfile edit. The standard path setup remains enabled when
-Conda initialization is disabled.
+The generated Bash or Zsh fragment prepends `$HOME/.local/bin` and `$HOME/bin` to
+`PATH`, in that order, once each. This makes user-installed command-line tools
+discoverable without a separate dotfile edit: `~/.local/bin` is where `pip install
+--user`, `pipx`, `uv tool` and the put their commands, and
+`~/bin` holds your own scripts. A directory that is already on `PATH` (for example
+from the default `~/.profile` on Debian or Ubuntu) keeps its place. The standard
+path setup remains enabled when Conda initialization is disabled.
 
 ## Managed Functions
 

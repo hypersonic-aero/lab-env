@@ -65,6 +65,7 @@ def test_generated_shell_includes_default_aliases(tmp_path: Path) -> None:
     assert config_section in generated_shell
     assert "# environment: initializes optional command-line tools" in generated_shell
     assert 'export PATH="$HOME/bin${PATH:+:$PATH}"' in generated_shell
+    assert 'export PATH="$HOME/.local/bin${PATH:+:$PATH}"' in generated_shell
     assert '"$HOME/miniforge3/etc/profile.d/conda.sh"' in generated_shell
     assert "/opt/miniconda3/etc/profile.d/conda.sh" in generated_shell
     assert "alias ..='cd ..'" in generated_shell
@@ -237,7 +238,7 @@ def test_generated_shell_supports_disabling_conda_initialization(tmp_path: Path)
     assert "etc/profile.d/conda.sh" not in generated_shell
 
 
-def test_generated_shell_adds_home_bin_to_path_once(tmp_path: Path) -> None:
+def test_generated_shell_adds_user_bin_dirs_to_path_once(tmp_path: Path) -> None:
     config_path = tmp_path / "config.toml"
     config_path.write_text(
         "schema_version = 1\n\n[shell]\ninitialize_conda = false\n",
@@ -255,7 +256,7 @@ def test_generated_shell_adds_home_bin_to_path_once(tmp_path: Path) -> None:
         text=True,
     )
 
-    assert result.stdout.strip() == f"{tmp_path}/bin:/usr/bin:/bin"
+    assert result.stdout.strip() == f"{tmp_path}/.local/bin:{tmp_path}/bin:/usr/bin:/bin"
 
 
 def test_generated_shell_supports_disabled_defaults_and_custom_aliases(tmp_path: Path) -> None:

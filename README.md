@@ -42,6 +42,7 @@ lab connect HOST
 lab pull HOST REMOTE_PATH [LOCAL_PATH]
 lab push HOST LOCAL_PATH REMOTE_PATH
 lab tecplot export figure.lay
+lab tecplot styles line-half
 lab shell preview
 lab shell install
 lab shell status

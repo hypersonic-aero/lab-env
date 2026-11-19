@@ -52,6 +52,10 @@ Issues = "https://github.com/hypersonic-aero/lab-env/issues"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+# the Tecplot style macros ship with the package (lab tecplot styles copies them)
+[tool.setuptools.package-data]
+"lab_env.tecplot" = ["style_macros/*.mcr"]
+
 [tool.setuptools_scm]
 fallback_version = "0.0.0"
 

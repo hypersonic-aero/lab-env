@@ -58,6 +58,31 @@ lay2pic figure.lay
 lay2pic first.lay second.lay --width 3000
 ```
 
+## `lab tecplot styles [NAME...]`
+
+Without names, lists the Tecplot style macros that ship with lab-env, one line
+each. With names, writes `NAME.mcr` for each into the current folder (or
+`--output-dir`), ready to play in Tecplot with Scripting > Play Macro/Script.
+Nothing is written if a name is unknown or a file already exists; `--force`
+overwrites.
+
+```bash
+lab tecplot styles                         # list the styles
+lab tecplot styles line-half contour-full  # write line-half.mcr, contour-full.mcr
+```
+
+| Style | Sets |
+|---|---|
+| `line-half`, `line-full` | XY line plot frame 3.25 x 2 in or 6.5 x 1.25 in, no border; Times titles (12 pt) and tick labels (10 pt); grid lines; legend in a white box |
+| `contour-half`, `contour-full` | 2D plot frame 3.25 x 2 in or 6.5 x 1.5 in, no border; independent x and y scales; Times fonts as above; grid lines; contour legend in a box at the top right |
+| `user-colors` | Custom colours `CUSTOM1` to `CUSTOM56`: eight ramps of seven shades |
+
+A style sets only what every figure of its kind shares. Axis titles, ranges,
+tick spacing and contour levels belong to each plot: set them in Tecplot. Play
+the style once, then save the layout, which keeps it. One minor tick between
+major ticks takes effect once a plot's tick spacing is set; while it is
+automatic, Tecplot picks the minor ticks itself.
+
 ## `lab shell preview`
 
 Prints the detected shell, startup paths, generated aliases and static state, and
